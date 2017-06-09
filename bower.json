@@ -1,0 +1,9 @@
+{
+  "name": "web-comps",
+  "version": "0.0.1",
+  "description": "Test",
+  "license": "MIT",
+  "dependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  }
+}
