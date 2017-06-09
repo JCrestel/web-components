@@ -1,7 +1,7 @@
 {
-  "name": "web-comps",
+  "name": "web-components",
   "version": "0.0.1",
-  "description": "Test",
+  "description": "A simple web component to make a presentation of web components",
   "main": "server.js",
   "scripts": {
     "start": "rm -rf bower_components && bower install && node server.js"

@@ -1,22 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Gist
- @JCrestel
- Sign out
- Watch 1
-  Star 0
-  Fork 1 AVGP/webcomponent-demos
- Code  Issues 0  Pull requests 0  Projects 0  Wiki Insights 
-Branch: master Find file Copy pathwebcomponent-demos/weather-info/weather-info.html
-6aa9ce1  on 6 May
- Martin Splitt Adds update method
-0 contributors
-RawBlameHistory     
-68 lines (55 sloc)  2.02 KB
 <template id="weather-info">
   <h1>
     <img>
@@ -45,40 +26,39 @@ RawBlameHistory
         this.removeAttribute('imperial')
       }
     }
-
-    update() {
-      this.shadowRoot.querySelector('#city').textContent = this.city
-      // fetch from open weather API
-      const unit = this.imperial ? 'imperial' : 'metric'
-      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=${unit}&appid=6fb16872c800649a6f7a568cccda7475`)
-      .then((result) => { return result.json() })
-      .then((result) => {
-        this.shadowRoot.querySelector('#temperature').textContent = `${result.main.temp} °${this.imperial ? 'F' : 'C'}`
-        this.shadowRoot.querySelector('#description').textContent = result.weather[0].main
-        this.shadowRoot.querySelector('img').src = `http://openweathermap.org/img/w/${result.weather[0].icon}.png`
-        this.dispatchEvent(new CustomEvent('load', {
-          detail: {
-            temperature: `${result.main.temp} °${this.imperial ? 'F' : 'C'}`,
-            description: result.weather[0].main
-          }
-        }))
-      })
-    }
-
-    attributeChangedCallback(name, oldVal, newVal) {        
-      this.update()
-    }
-
+        
     connectedCallback() {
       this.attachShadow({ mode: 'open' })
       const content = document.importNode(tpl, true)
       this.shadowRoot.appendChild(content)
 
       this.update()
+    }    
+
+    update() {
+      if(this.shadowRoot){
+        this.shadowRoot.querySelector('#city').textContent = this.city
+        // fetch from open weather API
+        const unit = this.imperial ? 'imperial' : 'metric'
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=${unit}&appid=6fb16872c800649a6f7a568cccda7475`)
+        .then((result) => { return result.json() })
+        .then((result) => {
+          this.shadowRoot.querySelector('#temperature').textContent = `${result.main.temp} °${this.imperial ? 'F' : 'C'}`
+          this.shadowRoot.querySelector('#description').textContent = result.weather[0].main
+          this.shadowRoot.querySelector('img').src = `http://openweathermap.org/img/w/${result.weather[0].icon}.png`
+          this.dispatchEvent(new CustomEvent('load', {
+            detail: {
+              temperature: `${result.main.temp} °${this.imperial ? 'F' : 'C'}`,
+              description: result.weather[0].main
+            }
+          }))
+        })
+      }
     }
-    
+
+    attributeChangedCallback(name, oldVal, newVal) {        
+      this.update()
+    }
   }
   customElements.define('weather-info', WeatherInfo)
 </script>
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help
