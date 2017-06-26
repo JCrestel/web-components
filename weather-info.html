@@ -1,64 +1,72 @@
 <template id="weather-info">
-  <h1>
-    <img>
-    Weather in <span id="city"></span>:
-  </h1>
-  <p>
-    <span id="temperature"></span> - <span id="description"></span>
-  </p>
+  <style>
+    :host {
+      display: block;
+      padding: 1em 1em;
+      border: 1px solid black;
+    }
+  </style>
+
+<h1>
+<img>
+Weather in <span id="city"></span>:
+</h1>
+<p>
+<span id="temperature"></span> - <span id="description"></span>
+</p>
 </template>
 
 <script>
-  const tpl = (document.currentScript || document._currentScript).ownerDocument.querySelector('template').content
-  
-  class WeatherInfo extends HTMLElement {
+const tpl = (document.currentScript || document._currentScript).ownerDocument.querySelector('template').content
 
-    static get observedAttributes() {
-      return [ 'city', 'imperial' ]
-    }
-    get city() { return this.getAttribute('city') }
-    set city(newCity) { this.setAttribute('city', newCity) }
-    get imperial() { return this.hasAttribute('imperial') }
-    set imperial(isImperial) {
-      if(isImperial) {
-        this.setAttribute('imperial', '')
-      } else {
-        this.removeAttribute('imperial')
-      }
-    }
-        
-    connectedCallback() {
-      this.attachShadow({ mode: 'open' })
-      const content = document.importNode(tpl, true)
-      this.shadowRoot.appendChild(content)
+class WeatherInfo extends HTMLElement {
 
-      this.update()
-    }    
+static get observedAttributes() {
+return [ 'city', 'imperial' ]
+}
+get city() { return this.getAttribute('city') }
+set city(newCity) { this.setAttribute('city', newCity) }
+get imperial() { return this.hasAttribute('imperial') }
+set imperial(isImperial) {
+if(isImperial) {
+this.setAttribute('imperial', '')
+} else {
+this.removeAttribute('imperial')
+}
+}
 
-    update() {
-      if(this.shadowRoot){
-        this.shadowRoot.querySelector('#city').textContent = this.city
-        // fetch from open weather API
-        const unit = this.imperial ? 'imperial' : 'metric'
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=${unit}&appid=6fb16872c800649a6f7a568cccda7475`)
-        .then((result) => { return result.json() })
-        .then((result) => {
-          this.shadowRoot.querySelector('#temperature').textContent = `${result.main.temp} °${this.imperial ? 'F' : 'C'}`
-          this.shadowRoot.querySelector('#description').textContent = result.weather[0].main
-          this.shadowRoot.querySelector('img').src = `http://openweathermap.org/img/w/${result.weather[0].icon}.png`
-          this.dispatchEvent(new CustomEvent('load', {
-            detail: {
-              temperature: `${result.main.temp} °${this.imperial ? 'F' : 'C'}`,
-              description: result.weather[0].main
-            }
-          }))
-        })
-      }
-    }
+connectedCallback() {
+this.attachShadow({ mode: 'open' })
+const content = document.importNode(tpl, true)
+this.shadowRoot.appendChild(content)
 
-    attributeChangedCallback(name, oldVal, newVal) {        
-      this.update()
-    }
-  }
-  customElements.define('weather-info', WeatherInfo)
+this.update()
+}    
+
+update() {
+if(this.shadowRoot){
+this.shadowRoot.querySelector('#city').textContent = this.city
+// fetch from open weather API
+const unit = this.imperial ? 'imperial' : 'metric'
+fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=${unit}&appid=6fb16872c800649a6f7a568cccda7475`)
+.then((result) => { return result.json() })
+.then((result) => {
+this.shadowRoot.querySelector('#temperature').textContent = `${result.main.temp} °${this.imperial ? 'F' : 'C'}`
+this.shadowRoot.querySelector('#description').textContent = result.weather[0].main
+this.shadowRoot.querySelector('img').src = `http://openweathermap.org/img/w/${result.weather[0].icon}.png`
+this.dispatchEvent(new CustomEvent('load', {
+detail: {
+temperature: `${result.main.temp} °${this.imperial ? 'F' : 'C'}`,
+description: result.weather[0].main
+}
+}))
+})
+}
+}
+
+attributeChangedCallback(name, oldVal, newVal) {        
+this.update()
+}
+}
+customElements.define('weather-info', WeatherInfo)
 </script>

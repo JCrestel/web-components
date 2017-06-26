@@ -1,0 +1,23 @@
+<template id="simple-component">
+    <style>
+        :host {            
+            display: block;
+            padding: 1em 1em;
+            border: 1px solid black;
+        }
+        p { color: orange; }
+    </style>
+
+    <p>I'm in Shadow DOM. My markup was stamped from a &lt;template&gt;.</p>
+</template>
+<script>
+    window.customElements.define('simple-component', class extends HTMLElement {
+
+        connectedCallback() {
+            let shadowRoot = this.attachShadow({mode: 'open'});
+            const t = (document.currentScript || document._currentScript).ownerDocument.querySelector('#simple-component');
+            const instance = t.content.cloneNode(true);
+            shadowRoot.appendChild(instance);
+        }
+    });
+</script>

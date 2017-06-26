@@ -1,0 +1,39 @@
+<template id="hello-world">
+    <style>
+        :host {
+            display: block;
+            padding: 1em 1em;
+            border: 1px solid black;
+        }
+
+        p { color: red; }
+    </style>
+
+    <p>Hello <span id="name">World</span></p>
+    <input type="text" id="myName">
+</template>
+<script>
+
+    const tplHW = (document.currentScript || document._currentScript).ownerDocument.querySelector('template').content
+    
+    class HelloWorld extends HTMLElement {
+
+        connectedCallback() {
+            let shadowRoot = this.attachShadow({mode: 'open'});
+            const content = document.importNode(tplHW, true)
+            this.shadowRoot.appendChild(content)
+
+            shadowRoot.getElementById("myName").addEventListener("input", e => {this.nameChanged();});
+        }
+                
+        nameChanged(){
+            var name = this.shadowRoot.getElementById('myName').value;
+            if(!name){
+                name = "World";
+            }
+            this.shadowRoot.getElementById('name').textContent = name;
+        }
+    };
+
+    window.customElements.define('hello-world', HelloWorld); 
+</script>
