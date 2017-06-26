@@ -22,13 +22,51 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal_js/css/print/pdf.css' : 'reveal_js/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<!-- Emoji rain binder -->
+		<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+		<link rel="import" href="emoji-rain-keybind.html">
+
+		<style>
+			.intro {
+				display: flex;
+				flex-flow: column;
+				align-items: stretch;
+				align-content: center;
+			}
+
+			.introItem {
+				display: flex;
+				flex-flow: row;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.introItem > span {
+				width: 9em;
+				text-align: left;
+				margin-left: 1em;
+			}
+		</style>
 	</head>
 	<body>
+
+		<emoji-rain-keybind keycode="122"></emoji-rain-keybind>
+
 		<div class="reveal">
 			<div class="slides">
 
 				<section>
-					<h1>Web components</h1>
+					<h2>&lt;Web-components&gt;</h2>
+				</section>
+				<section>
+					<div class="intro">
+						<div class="introItem"><img class="plain" src="images/icon-customelements.png" alt="Custom Elements"><span>Custom Elements</span></div>
+						<div class="introItem"><img class="plain" src="images/icon-shadowdom.png" alt="Shadow DOM"><span>Shadow DOM</span></div>
+						<div class="introItem"><img class="plain" src="images/icon-templates.png" alt="HTML Templates"><span>HTML Templates</span></div>
+						<div class="introItem"><img class="plain" src="images/icon-htmlimports.png" alt="HTML Imports"><span>HTML Imports</span></div>
+					</div>
+					based on a standart set of W3C Especification
 				</section>
 			</div>
 		</div>

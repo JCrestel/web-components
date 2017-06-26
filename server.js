@@ -10,12 +10,12 @@ var app = express();
 
 // http://expressjs.com/en/starter/static-files.html
 //app.use(express.static('public'));
-app.use(express.static(__dirname));
-app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+app.use(express.static(__dirname + '/docs'));
+app.use('/bower_components',  express.static(__dirname + '/docs' + '/bower_components'));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
-  response.sendFile(__dirname + '/index.html');
+  response.sendFile(__dirname + '/docs' + '/index.html');
 });
 
 // listen for requests :)

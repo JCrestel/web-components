@@ -1,0 +1,12 @@
+{
+  "name": "emoji-rain-keybind",
+  "description": "Make rain emojis by keyboard event",
+  "main": "emoji-rain-keybind.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0-rc.2",
+    "emoji-rain": "emoji-rain#^1.0.4"
+  },
+  "resolutions": {
+    "polymer": "^2.0.0-rc.2"
+  }
+}

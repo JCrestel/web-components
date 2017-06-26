@@ -1,0 +1,51 @@
+<link rel="import" href="bower_components/polymer/polymer-element.html">
+<link rel="import" href="bower_components/emoji-rain/emoji-rain.html">
+
+<dom-module id="emoji-rain-keybind">
+  <template>
+    <style>
+      :host {
+        position: fixed;
+        z-index: -1;
+      }
+      #canvas {
+        background: transparent;
+      }
+    </style>
+
+    <emoji-rain id="rainmaker"></emoji-rain>
+  </template>
+
+  <script>
+    class EmojiRainKeybind extends Polymer.Element {
+
+      static get is() { return 'emoji-rain-keybind'; }
+
+      static get properties() {
+        return {
+          keycode: {
+            type: Number,
+          }
+        }
+      }
+
+      ready() {
+        super.ready();
+        window.addEventListener('keypress', e => this._keypress(e));
+      }
+
+      _keypress(e){
+        console.log(e.keyCode);
+        if (e.keyCode === this.keycode) {
+          if (this.$.rainmaker.active) {
+            this.$.rainmaker.stop();
+          } else {
+            this.$.rainmaker.start();
+          }
+        }
+      }
+    }
+
+    window.customElements.define(EmojiRainKeybind.is, EmojiRainKeybind);
+  </script>
+</dom-module>
