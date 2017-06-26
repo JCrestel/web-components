@@ -1,15 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>      
-    <title>Weather</title>
-    <!-- Load the polyfill so that the demo works everywhere -->
-    <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <!-- Import the custom element so that the browser knows what it means -->
-    
-    <link rel="import" href="../weather-info.html">
-  </head>
-  <body>      
-    <weather-info city="Paris"></weather-info>
-  </body>
+		<title>Web components</title>
+		
+		<link rel="icon" href="images/favicon.png" type="image/png">
+
+		<link rel="stylesheet" href="reveal_js/css/reveal.css">
+		<link rel="stylesheet" href="reveal_js/css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal_js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal_js/css/print/pdf.css' : 'reveal_js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1>Web components</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="reveal_js/lib/js/head.min.js"></script>
+		<script src="reveal_js/js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({});
+		</script>
+	</body>
 </html>
