@@ -14,13 +14,13 @@
 </template>
 <script>
 
-    const tplHW = (document.currentScript || document._currentScript).ownerDocument.querySelector('template').content
+    const templateHelloWorld = (document.currentScript || document._currentScript).ownerDocument.querySelector('#hello-world').content;
     
     class HelloWorld extends HTMLElement {
 
         connectedCallback() {
             let shadowRoot = this.attachShadow({mode: 'open'});
-            const content = document.importNode(tplHW, true)
+            const content = document.importNode(templateHelloWorld, true)
             this.shadowRoot.appendChild(content)
 
             shadowRoot.getElementById("myName").addEventListener("input", e => {this.nameChanged();});
