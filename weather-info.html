@@ -49,7 +49,7 @@
         this.shadowRoot.querySelector('#city').textContent = this.city
         // fetch from open weather API
         const unit = this.imperial ? 'imperial' : 'metric'
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=${unit}&appid=6fb16872c800649a6f7a568cccda7475`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=${unit}&appid=fb7fd61e375c2260cbc19c3ad64d3f0e`)
           .then((result) => { return result.json() })
           .then((result) => {
             this.shadowRoot.querySelector('#temperature').textContent = `${result.main.temp} °${this.imperial ? 'F' : 'C'}`
