@@ -1,0 +1,63 @@
+/** Style CSS*/
+.intro{
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+    align-content: center;}
+
+.introItem{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;}
+
+.introItem > div{
+    width: 9em;
+    text-align: left;
+    margin-left: 1em;}
+
+.introItem > img{
+    width: 2em;
+    height: 2em;}
+
+.title{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    align-content: center;}
+
+.title > span{
+    width: 9em;
+    text-align: left;
+    margin-left: 1em;
+    font-size: large;}
+
+.title > img{
+    width: 1em;
+    height: 1em;}
+
+.content{
+    margin-top: 2em !important;}
+
+span{
+    font-size: 0.6em !important;}
+
+p{
+    font-size: 0.4em !important;}
+
+.reveal .slides > section.present.topped,
+.reveal .slides > section.topped > section.present{
+  height: 100%;}
+
+.flewColumnStart{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;}
+
+div.flewColumnStart{
+    width: fit-content;
+    margin: auto;}
+
+.gistCode{
+    max-width: 14em;}
+
