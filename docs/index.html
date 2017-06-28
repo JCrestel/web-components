@@ -50,211 +50,242 @@
 						<div class="introItem"><img class="plain" src="images/icon-templates.png" alt="HTML Templates"><div>HTML Templates</div></div>
 						<div class="introItem"><img class="plain" src="images/icon-htmlimports.png" alt="HTML Imports"><div>HTML Imports</div></div>
 					</div>
-					<span>Based on a standard set of W3C Especification</span>
+					<span style="font-size: 0.6em !important;">Based on a standard set of W3C specification</span>
 				</section>
 
 				<section class="topped">
 					<section>
 						<div class="title"><img class="plain" src="images/icon-customelements.png" alt="Custom Elements"><span>Custom Elements</span></div>	
-						<div class="flewColumnStart content">
-							<p>Especification to use new types of DOM elements in a document and extend</p>
+						<div class="flexColumnStart flexColumnCenter">
+							<p>Specification to use new types of DOM elements in a document and extend</p>
 							<p>There are already custom elements shipped with HTML5</p>
 							<p>&lt;video&gt; &lt;figure&gt; &lt;article&gt; &lt;header&gt; &lt;aside&gt; &lt;nav&gt; ...</p>
 						</div>
 					</section>
 					<section>
 						<div class="title"><img class="plain" src="images/icon-customelements.png" alt="Custom Elements"><span>Custom Elements</span></div>	
-						<h5><strong>Properties</strong> - elements allow</h5>
-						<div class="flewColumnStart content">
-							<p>1. Define new HTML elements.</p>
-							<p>2. Bundle together custom functionality into a single tag.</p>
-							<p>3. Extend other elements.</p>
-							<p>4. Extend the API of other DOM elements.</p>
+						<div class="flexColumnCenter">
+							<h5><strong>Properties</strong> - elements allow</h5>
+							<div class="flexColumnStart">
+								<p>1. Define new HTML elements.</p>
+								<p>2. Bundle together custom functionality into a single tag.</p>
+								<p>3. Extend other elements.</p>
+								<p>4. Extend the API of other DOM elements.</p>
+							</div>
 						</div>
 					</section>
 					<section>
 						<div class="title"><img class="plain" src="images/icon-customelements.png" alt="Custom Elements"><span>Custom Elements</span></div>	
-						<h5>Register an element</h5>		
-						<div class="flewColumnStart content">
-							<p>The tag name must have a dash</p>
-							<p>The custom element extend a Type Extension Custom Element.</p>
-							<p>To define a type extension element you need to pass <strong>registerElement()</strong></p>
-							<div class="gistCode"><script src="https://gist.github.com/JCrestel/56613c9316e660b523009e1b412ca675.js"></script></div>
+						<div class="flexColumnCenter">
+							<h5>Register an element</h5>		
+							<div class="flexColumnStart">
+								<p>The tag name must have a dash</p>
+								<p>The custom element extend a Type Extension Custom Element.</p>
+								<p>To define a type extension element you need to pass <strong>registerElement()</strong></p>
+								<script src="https://gist.github.com/JCrestel/56613c9316e660b523009e1b412ca675.js"></script>
+							</div>
 						</div>
 					</section>
 					<section>
 						<div class="title"><img class="plain" src="images/icon-customelements.png" alt="Custom Elements"><span>Custom Elements</span></div>	
-
+						<div class="flexColumnCenter">
 							<h5>Custom elements callbacks</h5>
-						<div class="flewColumnStart content">
-							<p><strong>createdCallback()</strong> - Called every time a custom element is created.</p>
-							<p><strong>attachedCallback()</strong> - Called when the element is attached to the DOM.</p>
-							<p><strong>detachedCallback()</strong> - Called when the element is removed from the DOM.</p>
-							<p><strong>attributeChangedCallback()</strong> - Called whenever one of the elements' attributes changes.</p>
+							<div class="flexColumnStart">
+								<p><strong>createdCallback()</strong> - Called every time a custom element is created.</p>
+								<p><strong>attachedCallback()</strong> - Called when the element is attached to the DOM.</p>
+								<p><strong>detachedCallback()</strong> - Called when the element is removed from the DOM.</p>
+								<p><strong>attributeChangedCallback()</strong> - Called whenever one of the elements' attributes changes.</p>
+							</div>
 						</div>
 					</section>
 					<section>
 						<div class="title"><img class="plain" src="images/icon-customelements.png" alt="Custom Elements"><span>Custom Elements</span></div>	
-						<h5>Browser support</h5>
-						<div class="flewColumnStart">	
-							<img class="plain" src="images/caniuse-customelements.png" alt="Browser support">
-							<span style="font-size: 0.4em !important;"><a href="http://caniuse.com/#feat=custom-elementsv1">caniuse.com</a> - 27/06/2017</span>
-							<p>Browser support could be improved with the use of <strong>polyfills</strong></p>
-						</div>						
+						<div class="flexColumnCenter">
+							<h5>Browser support</h5>
+							<div class="flexColumnStart">	
+								<img class="plain" src="images/caniuse-customelements.png" alt="Browser support">
+								<span style="font-size: 0.4em !important;"><a href="http://caniuse.com/#feat=custom-elementsv1">caniuse.com</a> - 27/06/2017</span>
+								<p>Browser support could be improved with the use of <strong>polyfills</strong></p>
+							</div>		
+						</div>				
 					</section>
 				</section>
 
 				<section class="topped">
 					<section>
 						<div class="title"><img class="plain" src="images/icon-shadowdom.png" alt="Shadow DOM"><span>Shadow DOM</span></div>	
-						<div class="flewColumnStart content">
+						<div class="flexColumnStart flexColumnCenter">
 							<p>Shadow DOM refers to the browser's ability to include a subtree of DOM elements into the rendering of a document.</p>
 							<p>This allows developers to encapsulate their HTML, styles and script into a single component.</p>
 						</div>
 					</section>
 					<section>
 						<div class="title"><img class="plain" src="images/icon-shadowdom.png" alt="Shadow DOM"><span>Shadow DOM</span></div>	
-						<h5>Example</h5>
-						<div class="flewColumnStart content">								
-							<input type="range" min="100" max="500" step="10" />
-							<p>Inspecting the element with Shadow Dom activated from dev tools.</p>
-							<p>We can see the HTML markup for all rendered elements, inside the input's shadow root.</p>
-							<img class="plain" src="images/inputShady.png" alt="Input shadow DOM">
+						<div class="flexColumnCenter">
+							<h5>Example</h5>
+							<div class="flexColumnStart">								
+								<input type="range" min="100" max="500" step="10" />
+								<p>Inspecting the element with Shadow Dom activated from dev tools.</p>
+								<p>We can see the HTML markup for all rendered elements, inside the input's shadow root.</p>
+								<img class="plain" src="images/inputShady.png" alt="Input shadow DOM">
+							</div>
 						</div>
 					</section>
 					<section>
 						<div class="title"><img class="plain" src="images/icon-shadowdom.png" alt="Shadow DOM"><span>Shadow DOM</span></div>	
-						<h5>Create a shadow tree</h5>
-						<div class="flewColumnStart content">	
-							<script src="https://gist.github.com/JCrestel/2897879a84b73ed9e0a7081a1f41a3c6.js"></script>
-							<span>The takeaway is that the content inside of the shadow host is no longer rendered.</span>
-							<span>Instead, the content inside of the shadow root is what gets rendered.</span>
-							<div>
-								<img class="plain" src="images/inputShady2.png" alt="Input shadow DOM">
-								<img class="plain" src="images/inputShady3.png" alt="Input shadow DOM">
-							</div>								
+						<div class="flexColumnCenter">
+							<h5>Create a shadow tree</h5>
+							<div class="flexColumnStart">	
+								<script src="https://gist.github.com/JCrestel/2897879a84b73ed9e0a7081a1f41a3c6.js"></script>
+								<span>The takeaway is that the content inside of the shadow host is no longer rendered.</span>
+								<span>Instead, the content inside of the shadow root is what gets rendered.</span>
+								<div>
+									<img class="plain" src="images/inputShady2.png" alt="Input shadow DOM">
+									<img class="plain" src="images/inputShady3.png" alt="Input shadow DOM">
+								</div>								
+							</div>
 						</div>
 					</section>					
 					<section>
 						<div class="title"><img class="plain" src="images/icon-shadowdom.png" alt="Shadow DOM"><span>Shadow DOM</span></div>	
-						<h5>Browser support</h5>
-						<div class="flewColumnStart">	
-							<img class="plain" src="images/caniuse-shadowdom.png" alt="Browser support">
-							<span style="font-size: 0.4em !important;"><a href="http://caniuse.com/#feat=shadowdomv1">caniuse.com</a> - 27/06/2017</span>
-							<p>Browser support could be improved with the use of <strong>polyfills</strong></p>
-						</div>				
+						<div class="flexColumnCenter">
+							<h5>Browser support</h5>
+							<div class="flexColumnStart">	
+								<img class="plain" src="images/caniuse-shadowdom.png" alt="Browser support">
+								<span style="font-size: 0.4em !important;"><a href="http://caniuse.com/#feat=shadowdomv1">caniuse.com</a> - 27/06/2017</span>
+								<p>Browser support could be improved with the use of <strong>polyfills</strong></p>
+							</div>		
+						</div>		
 					</section>
 				</section>
 				
 				<section class="topped">
 					<section>
 						<div class="title"><img class="plain" src="images/icon-templates.png" alt="HTML Templates"><span>HTML Templates</span></div>	
-						<div class="flewColumnStart content">	
+						<div class="flexColumnStart flexColumnCenter">	
 							<p>The <strong>&lt;template&gt;</strong> element is used to declare fragments of HTML that can be cloned and inserted in the DOM by script.</p>
 							<p>They're an ideal placeholder for declaring the structure of a custom element.</p>
 						</div>
 					</section>
 					<section>
 						<div class="title"><img class="plain" src="images/icon-templates.png" alt="HTML Templates"><span>HTML Templates</span></div>	
-						<h5>Declaration</h5>
-						<div class="flewColumnStart content">	
-							<p>Defining a new <strong>template</strong> for a custom element</p>
-							<script src="https://gist.github.com/JCrestel/3e180617c68c5bdb3258f338c6a54d2f.js"></script>
+						<div class="flexColumnCenter">
+							<h5>Declaration</h5>
+							<div class="flexColumnStart">	
+								<p>Defining a new <strong>template</strong> for a custom element</p>
+								<script src="https://gist.github.com/JCrestel/3e180617c68c5bdb3258f338c6a54d2f.js"></script>
+							</div>
 						</div>
 					</section>
 					<section>
 						<div class="title"><img class="plain" src="images/icon-templates.png" alt="HTML Templates"><span>HTML Templates</span></div>	
-						<h5>Using</h5>
-						<div class="flewColumnStart content">		
-							<p>Appending the <strong>template</strong> to the shadow root of a custom element.</p>
-							<script src="https://gist.github.com/JCrestel/b08cfb1dd578a519def9cbe2cac8ef68.js"></script>
-							<p>Inside the <strong>connectedCallback()</strong>, we generate deep copies of the template</p>
+						<div class="flexColumnCenter">
+							<h5>Using</h5>
+							<div class="flexColumnStart">		
+								<p>Appending the <strong>template</strong> to the shadow root of a custom element.</p>
+								<script src="https://gist.github.com/JCrestel/b08cfb1dd578a519def9cbe2cac8ef68.js"></script>
+								<p>Inside the <strong>connectedCallback()</strong>, we generate deep copies of the template</p>
+							</div>
 						</div>
 					</section>
 					<section>
 						<div class="title"><img class="plain" src="images/icon-templates.png" alt="HTML Templates"><span>HTML Templates</span></div>	
-						<h5>Browser support</h5>
-						<div class="flewColumnStart">	
-							<img class="plain" src="images/caniuse-templates.png" alt="Browser support">
-							<span style="font-size: 0.4em !important;"><a href="http://caniuse.com/#feat=template">caniuse.com</a> - 27/06/2017</span>
-							<p>Browser support could be improved with the use of <strong>polyfills</strong></p>
-						</div>				
+						<div class="flexColumnCenter">
+							<h5>Browser support</h5>
+							<div class="flexColumnStart">	
+								<img class="plain" src="images/caniuse-templates.png" alt="Browser support">
+								<span style="font-size: 0.4em !important;"><a href="http://caniuse.com/#feat=template">caniuse.com</a> - 27/06/2017</span>
+								<p>Browser support could be improved with the use of <strong>polyfills</strong></p>
+							</div>			
+						</div>	
 					</section>
 				</section>
 	
 				<section class="topped">
 					<section>
 						<div class="title"><img class="plain" src="images/icon-htmlimports.png" alt="HTML Imports"><span>HTML Imports</span></div>	
-						<div class="flewColumnStart content">	
+						<div class="flexColumnStart flexColumnCenter">	
 							<p>HTML Imports allow you to load resources inside HTML documents as an aggregated HTML file.</p>
-							<div class="gistCode"><script src="https://gist.github.com/JCrestel/e5c5dba3d8e074b70968755905585709.js"></script></div>
+							<script src="https://gist.github.com/JCrestel/e5c5dba3d8e074b70968755905585709.js"></script>
 							<p>HTML Imports will immediately load the imported document, resolve subresources and execute JavaScript, if any.</p>
-						</div>	
+						</div>
 					</section>
 					<section>
 						<div class="title"><img class="plain" src="images/icon-htmlimports.png" alt="HTML Imports"><span>HTML Imports</span></div>	
-						<h5>Browser support</h5>
-						<div class="flewColumnStart">	
-							<img class="plain" src="images/caniuse-htmlimports.png" alt="Browser support">
-							<span style="font-size: 0.4em !important;"><a href="http://caniuse.com/#feat=imports">caniuse.com</a> - 27/06/2017</span>
-							<p>Browser support could be improved with the use of <strong>polyfills</strong></p>
-						</div>				
+						<div class="flexColumnCenter">
+							<h5>Browser support</h5>
+							<div class="flexColumnStart">	
+								<img class="plain" src="images/caniuse-htmlimports.png" alt="Browser support">
+								<span style="font-size: 0.4em !important;"><a href="http://caniuse.com/#feat=imports">caniuse.com</a> - 27/06/2017</span>
+								<p>Browser support could be improved with the use of <strong>polyfills</strong></p>
+							</div>				
+						</div>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h5>Hello World</h5>
-						<script src="https://gist.github.com/JCrestel/b4206e5b20b874a5793f9abcffe8f7c3.js"></script>
-					</section>
-					<section>
-						<h5>Index HTML</h5>
-						<script src="https://gist.github.com/JCrestel/a06c15f98de620eb5d4f6b42113f1084.js"></script>
-					</section>
-					<section>
-						<h5>Browser support</h5>
-						<img class="plain" src="images/browser-support.png" alt="Browser support">
-						<span style="font-size: 0.4em !important;"><a href="https://github.com/WebComponents/webcomponentsjs">webcomponents.js</a> - 27/06/2017</span>									
-					</section>
-					<section>
-						<h5>Polyfill</h5>
-						<div class="flewColumnStart content">	
-							<p>Piece of code (or plugin) that provides the technology that you, the developer, expect the browser to provide natively.</p>
-							<p><a href="https://github.com/WebComponents/webcomponentsjs">webcomponents.js</a> is a set of polyfills built on top of the Web Components specifications.</p>
-							<p>It makes it possible for developers to use these standards today across all modern browsers.</p>
+						<div class="flexColumnCenter">
+							<h5>Hello World</h5>
+							<script src="https://gist.github.com/JCrestel/b4206e5b20b874a5793f9abcffe8f7c3.js"></script>
 						</div>
 					</section>
 					<section>
-						<h5>Librairies</h5>
-						<div class="librairies">
-							<div>
-								<img class="plain" src="images/icon-polymer.png" alt="Polymer">
-								<p>Polymer</p>
-							</div>
-							<div>
-								<img class="plain" src="images/icon-xtag.png" alt="X-Tag">
-								<p>X-Tag</p>
-							</div>
-							<div>
-								<img class="plain" src="images/icon-bosonic.png" alt="Bosonic">
-								<p>Bosonic</p>
-							</div>
-							<div>
-								<img class="plain" src="images/icon-skatejs.png" alt="SkateJs">
-								<p>SkateJs</p>
+						<div class="flexColumnCenter">
+							<h5>Index HTML</h5>
+							<script src="https://gist.github.com/JCrestel/a06c15f98de620eb5d4f6b42113f1084.js"></script>
+						</div>
+					</section>
+					<section>
+						<div class="flexColumnCenter">
+							<h5>Browser support</h5>
+							<img class="plain" src="images/browser-support.png" alt="Browser support">
+							<span style="font-size: 0.4em !important;"><a href="https://github.com/WebComponents/webcomponentsjs">webcomponents.js</a> - 27/06/2017</span>	
+						</div>								
+					</section>
+					<section>
+						<div class="flexColumnCenter">
+							<h5>Polyfill</h5>
+							<div class="flexColumnStart">	
+								<p>Piece of code (or plugin) that provides the technology that you, the developer, expect the browser to provide natively.</p>
+								<p><a href="https://github.com/WebComponents/webcomponentsjs">webcomponents.js</a> is a set of polyfills built on top of the Web Components specifications.</p>
+								<p>It makes it possible for developers to use these standards today across all modern browsers.</p>
 							</div>
 						</div>
-						<p><a href="https://www.webcomponents.org">WebComponents.org</a> aims to make it easy to share and discover reusable web UI components.</p>
+					</section>
+					<section>
+						<div class="flexColumnCenter">
+							<h5>Librairies</h5>
+							<div class="librairies">
+								<div>
+									<img class="plain" src="images/icon-polymer.png" alt="Polymer">
+									<p>Polymer</p>
+								</div>
+								<div>
+									<img class="plain" src="images/icon-xtag.png" alt="X-Tag">
+									<p>X-Tag</p>
+								</div>
+								<div>
+									<img class="plain" src="images/icon-bosonic.png" alt="Bosonic">
+									<p>Bosonic</p>
+								</div>
+								<div>
+									<img class="plain" src="images/icon-skatejs.png" alt="SkateJs">
+									<p>SkateJs</p>
+								</div>
+							</div>
+							<p style="font-size: 0.5em !important;text-align: left;"><a href="https://www.webcomponents.org">WebComponents.org</a> aims to make it easy to share and discover reusable web UI components.</p>
+						</div>
 					</section>
 				</section>
 
 				<section>
 					<h5>Resources</h5>
-					<div class="flewColumnStart content">	
+					<div class="flexColumnStart">	
 						<a href="http://slides.com/ccanado/web-components#/">Carlos Cañado's presentation</a>
 						<a href="http://slides.com/davidchavarri/web-components#/">David Chavarri's presentation</a>
 						<a href="https://www.webcomponents.org">WebComponents.org</a>
-						<a href="http://caniuse.com/#home">caniuse.com</a>
+						<a href="http://caniuse.com/#home">CanIUse.com</a>
 						<a href="https://meowni.ca">Monica Dinculescu's blog</a>
 						<a href="https://github.com/AVGP/webcomponent-demos">Martin Splitt's repository and presentation</a>
 						<a href="https://www.w3.org/TR/custom-elements/">W3C Especification</a>
@@ -262,10 +293,11 @@
 				</section>
 
 				<section>
-					<h3>Thanks</h3>
-					<h4>*insert emoji*</h4>
-					<h5>#usetheplatform</h5>
-					*insert heart*
+					<div class="conclusion">							
+						<h3>👍 Thanks 👌</h3>
+						<h5>#usetheplatform </h5>
+						<span>Made with <span style="color: red;">♥</span> by <a href="https://github.com/JCrestel">Jérémy</a></span>
+					</div>
 				</section>
 			</div>
 		</div>

@@ -21,6 +21,10 @@
     height: 2em;}
 
 .title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
     display: flex;
     flex-flow: row;
     align-items: center;
@@ -36,33 +40,39 @@
     width: 1em;
     height: 1em;}
 
-.content{
-    margin-top: 2em !important;}
-
-span{
-    font-size: 0.6em !important;}
-
-p{
-    font-size: 0.5em !important;}
-
 .reveal .slides > section.present.topped,
 .reveal .slides > section.topped > section.present{
   height: 100%;}
 
-.flewColumnStart{
+.flexColumnCenter{    
+    height: 90%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;}
+
+.flexColumnStart{
     display: flex;
     flex-flow: column;
     align-items: flex-start;}
 
-div.flewColumnStart{
-    width: fit-content;
-    margin: auto;}
+.flexColumnStart > p, .flexColumnStart > span, .flexColumnStart > a{
+    font-size: 0.5em !important;
+    text-align: left;} 
 
-.gistCode{
-    max-width: 16em;}
+div.flexColumnStart{
+    width: fit-content;
+    margin: 1em auto;}
 
 .librairies{
     display: flex;
     flex-flow: row;
     align-items: center;
-    justify-content: space-between;}
+    justify-content: space-between;
+    font-size: 0.5em !important;}
+    
+.conclusion{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;}    
