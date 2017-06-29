@@ -65,10 +65,11 @@ div.flexColumnStart{
     margin: 1em auto;}
 
 .librairies{
+    width: 100%;
     display: flex;
     flex-flow: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 0.5em !important;}
     
 .conclusion{
