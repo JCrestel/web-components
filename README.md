@@ -1,5 +1,5 @@
 # web-components
-Test de web components
+Presentation of web components prepared for a meetup in Capgemini Brest
 
 # running
 
